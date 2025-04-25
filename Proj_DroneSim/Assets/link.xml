@@ -1,6 +1,0 @@
-<linker>
-<assembly fullname="NPOI" preserve="all"/>
-<assembly fullname="NPOI.OOXML" preserve="all"/>
-<assembly fullname="NPOI.OpenXml4Net" preserve="all"/>
-<assembly fullname="NPOI.OpenXmlFormats" preserve="all"/>
-</linker>
