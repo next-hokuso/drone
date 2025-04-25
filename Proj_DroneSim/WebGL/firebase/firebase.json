@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "Proj_DroneSim",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

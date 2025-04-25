@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d10039977b0d31d45aa211d61b893c3e, type: 3}
+  m_Name: AudioListData
+  m_EditorClassIdentifier: 
+  sheets:
+  - name: Sheet1
+    list:
+    - Id: SE_0001
+      Name: count
+      Prio: 0
+      FilePath_JP: Audio/count
+      FilePath_EN: '-'
+      Volume: 1
+      Comment: "\u30AB\u30A6\u30F3\u30C8\u30C0\u30A6\u30F3\u97F3\u3001\u6C7A\u5B9A\u97F3"
+    - Id: SE_0002
+      Name: flying
+      Prio: 0
+      FilePath_JP: Audio/flying
+      FilePath_EN: '-'
+      Volume: 0.5
+      Comment: "\u30C9\u30ED\u30FC\u30F3\u98DB\u884C\u4E2D\u97F3"
+    - Id: SE_0003
+      Name: landing
+      Prio: 0
+      FilePath_JP: Audio/landing
+      FilePath_EN: '-'
+      Volume: 0.5
+      Comment: "\u30C9\u30ED\u30FC\u30F3\u7740\u9678\u97F3"
+    - Id: SE_0002
+      Name: landing_propeller
+      Prio: 0
+      FilePath_JP: Audio/landing_propeller
+      FilePath_EN: '-'
+      Volume: 0.5
+      Comment: "\u30C9\u30ED\u30FC\u30F3\u7740\u5730\u72B6\u614B\u30D7\u30ED\u30DA\u30E9\u56DE\u8EE2\u97F3"
+    - Id: SE_0003
+      Name: takeoff
+      Prio: 0
+      FilePath_JP: Audio/takeoff
+      FilePath_EN: '-'
+      Volume: 0.5
+      Comment: "\u30C9\u30ED\u30FC\u30F3\u96E2\u9678\u97F3"
+    - Id: SE_0004
+      Name: moter
+      Prio: 0
+      FilePath_JP: Audio/moter
+      FilePath_EN: '-'
+      Volume: 1
+      Comment: "\u30E2\u30FC\u30BF\u30FC\u97F3"
+    - Id: SE_0005
+      Name: metronome
+      Prio: 0
+      FilePath_JP: Audio/metronome
+      FilePath_EN: '-'
+      Volume: 1
+      Comment: "\u30E1\u30C8\u30ED\u30CE\u30FC\u30E0\u97F3"
+    - Id: BGM_01
+      Name: BGM01
+      Prio: 0
+      FilePath_JP: Audio/bgm_001_bgm
+      FilePath_EN: 
+      Volume: 1
+      Comment: "\u30B2\u30FC\u30E0\u753B\u9762"

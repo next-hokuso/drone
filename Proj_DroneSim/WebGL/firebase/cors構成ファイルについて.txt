@@ -1,0 +1,27 @@
+
+https://qiita.com/chima91/items/0cd46b5965e087609ef5
+https://zenn.dev/taizo_pro/articles/b968ebbf0ed42d
+
+・CORSの設定について
+
+firebase.storageへのアクセスにHTTP 関数使用しているため、CORSの構成をデプロイする必要があります。
+
+
+①Google Cloud SDKをインストールする。
+
+②CORSの構成をデプロイする
+
+CORSの構成ファイルは
+
+[Proj_DroneSim]/WebGL/firebase/cors.json
+となります。
+
+以下、環境によってのデプロイ先となります。
+
+
+・Dev環境
+gsutil cors set cors.json gs://drone-star-training-dev.appspot.com
+
+
+・本番環境
+gsutil cors set cors.json gs://drone-star-training-web.appspot.com
