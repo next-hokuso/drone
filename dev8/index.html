@@ -50,7 +50,7 @@
         //ウインドウのリサイズ時の処理
         function windowResizeEvent() {
             var timeoutId = 0;
-            const resizeDelay = 300;  //リサイズが完了したと判断する時間
+            const resizeDelay = 1;  //リサイズが完了したと判断する時間
             window.onresize = () => {
                 clearTimeout(timeoutId);
                 timeoutId = setTimeout(() => {
