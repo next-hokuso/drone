@@ -4,15 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>DroneStarTraining</title>
-    <style>
-       #canvas{
-         touch-action; none;
-       }
-    </style>
 </head>
 <body style="text-align: center; padding: 0; border: 0; margin: 0;">
     <canvas id="unity-canvas" width=960 height=600 style="width: 960px; height: 600px; background: #231F20"></canvas>
-    <script src="Build/267877ffa4497ae62e46fbee1ecd98b7.loader.js"></script>
+    <script src="Build/Proj_DroneSim.loader.js"></script>
 
     <!-- CDNからSDKを追加 -->
     <script defer src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
@@ -89,9 +84,9 @@
         }
 
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/c0635494dbcff37f21cce6e362646ed3.data.unityweb",
-        frameworkUrl: "Build/42e6681d46717ad08bc79e4c2488ee07.framework.js.unityweb",
-        codeUrl: "Build/74af3cb417c625f10283d987a610eb5e.wasm.unityweb",
+        dataUrl: "Build/Proj_DroneSim.data.unityweb",
+        frameworkUrl: "Build/Proj_DroneSim.framework.js.unityweb",
+        codeUrl: "Build/Proj_DroneSim.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "ORSO Inc.",
         productName: "DroneStarTraining",
