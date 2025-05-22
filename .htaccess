@@ -33,6 +33,5 @@ AddType application/wasm .wasm
 	Header set Access-Control-Allow-Origin "*"
 	Header set Access-Control-Allow-Credentials "true"
 	Header set Access-Control-Allow-Headers "Accept, X-Access-Token, X-Application-Name, X-Request-Sent-Time"
-	Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, HEAD, OPTIONS"
-    Header ser Access-Control-Max-Age "86400"
+	Header set Access-Control-Allow-Methods "GET, POST, PUT, HEAD, OPTIONS"
 </IfModule>
