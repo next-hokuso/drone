@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | DroneStarTraining</title>
+    <title>DroneStarTraining</title>
 </head>
 <body style="text-align: center; padding: 0; border: 0; margin: 0;">
     <canvas id="unity-canvas" width=960 height=600 style="width: 960px; height: 600px; background: #231F20"></canvas>
@@ -50,7 +50,7 @@
         //ウインドウのリサイズ時の処理
         function windowResizeEvent() {
             var timeoutId = 0;
-            const resizeDelay = 300;  //リサイズが完了したと判断する時間
+            const resizeDelay = 1;  //リサイズが完了したと判断する時間
             window.onresize = () => {
                 clearTimeout(timeoutId);
                 timeoutId = setTimeout(() => {
@@ -71,6 +71,7 @@
             canvas.style.width = "100%";
             canvas.style.height = "100%";
             canvas.style.position = "fixed";
+            canvas.style.touchAction = "none";
 
             document.body.style.textAlign = "left";
 
@@ -90,7 +91,7 @@
         streamingAssetsUrl: "StreamingAssets",
         companyName: "ORSO Inc.",
         productName: "DroneStarTraining",
-        productVersion: "0.0.1",
+        productVersion: "0.0.2",
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
@@ -98,126 +99,6 @@
         if (!isMobile) {
             windowResizeEvent();
         }
-
-        let connectedGamepadIndex;
-        let loopID;
-
-        addEventListener("gamepadconnected", (e) => {
-            connectedGamepadIndex = e.gamepad.index;
-            loopID = requestAnimationFrame(loop);
-        });
-
-        addEventListener("gamepaddisconnected", (e) => {
-            connectedGamepadIndex = null;
-            cancelAnimationFrame(loopID);
-        });
-
-        // standardタイプのコントローラのマッピングです。
-        const BUTTON_A_INDEX = 0;
-        const BUTTON_B_INDEX = 1;
-        const BUTTON_X_INDEX = 2;
-        const BUTTON_Y_INDEX = 3;
-        const BUTTON_LB_INDEX = 4;
-        const BUTTON_RB_INDEX = 5;
-        const BUTTON_LT_INDEX = 6;
-        const BUTTON_RT_INDEX = 7;
-        const BUTTON_BACK_INDEX = 8;
-        const BUTTON_START_INDEX = 9;
-        const BUTTON_L3_INDEX = 10;
-        const BUTTON_R3_INDEX = 11;
-        const BUTTON_UP_INDEX = 12;
-        const BUTTON_DOWN_INDEX = 13;
-        const BUTTON_LEFT_INDEX = 14;
-        const BUTTON_RIGHT_INDEX = 15;
-        const BUTTON_HOME_INDEX = 16;
-
-        // standardタイプのコントローラのマッピングです。
-        const AXIS_L_HORIZONTAL_INDEX = 0;
-        const AXIS_L_VERTICAL_INDEX = 1;
-        const AXIS_R_HORIZONTAL_INDEX = 2;
-        const AXIS_R_VERTICAL_INDEX = 3;
-
-        let wait = 0;
-
-        function loop(timestamp) {
-            // ゲームパッドの入力情報を毎フレーム取得します。
-            let gamepads = navigator.getGamepads();
-            let gp = gamepads[connectedGamepadIndex];
-
-            if (wait > 0) {
-                --wait;
-            }
-
-            if (wait == 0) {
-                let axesCount = gp.axes.length;
-
-                // ボタンが押されているかどうかを取得します。
-                let aButton = gp.buttons[BUTTON_A_INDEX];
-                if (aButton.pressed) {
-                    console.log(`Aボタンが押されました。value:${aButton.value} AxesCount${axesCount}`);
-
-                    console.log(`axes0:${gp.axes[0].toFixed(3)} axes1:${gp.axes[1].toFixed(3)} axes2:${gp.axes[2].toFixed(3)} axes3:${gp.axes[3].toFixed(3)}`);
-                }
-
-                let axes0 = gp.axes[0].toFixed(3);
-                let axes1 = gp.axes[1].toFixed(3);
-                let axes2 = gp.axes[2].toFixed(3);
-                let axes3 = gp.axes[3].toFixed(3);
-
-                if (axes0 >= 0.9 || axes0 <= -0.9) {
-                    var dispStr = `axes0:${axes0}\n`
-                    console.log(dispStr);
-                    document.write(dispStr);
-                }
-                if (axes1 >= 0.9 || axes1 <= -0.9) {
-                    var dispStr = `axes1:${axes1}\n`
-                    console.log(dispStr);
-                    document.write(dispStr);
-                }
-                if (axes2 >= 0.9 || axes2 <= -0.9) {
-                    var dispStr = `axes2:${axes2}\n`
-                    console.log(dispStr);
-                    document.write(dispStr);
-                }
-                if (axes3 >= 0.9 || axes3 <= -0.9) {
-                    var dispStr = `axes3:${axes3}\n`
-                    console.log(dispStr);
-                    document.write(dispStr);
-                }
-
-                //// スティックが倒されているかどうかを取得します。
-                //let leftAxisHorizontal = gp.axes[AXIS_L_HORIZONTAL_INDEX];
-                //let leftAxisVertical = gp.axes[AXIS_L_VERTICAL_INDEX];
-                //if (leftAxisHorizontal >= 0.9 || leftAxisHorizontal <= -0.9) {
-                //    var dispStr = `LS Hor:${leftAxisHorizontal.toFixed(3)}`
-                //    console.log(dispStr);
-                //    document.write(dispStr);
-                //}
-                //if (leftAxisVertical >= 0.9 || leftAxisVertical <= -0.9) {
-                //    var dispStr = `LS Ver:${leftAxisVertical.toFixed(3)}`;
-                //    console.log(dispStr);
-                //    document.write(dispStr);
-                //}
-                //
-                //let rightAxisHorizontal = gp.axes[AXIS_R_HORIZONTAL_INDEX];
-                //let rightAxisVertical = gp.axes[AXIS_R_VERTICAL_INDEX];
-                //if (rightAxisHorizontal >= 0.9 || rightAxisHorizontal <= -0.9) {
-                //    var dispStr = `RS Hor:${rightAxisHorizontal.toFixed(3)}`;
-                //    console.log(dispStr);
-                //    document.write(dispStr);
-                //}
-                //if (rightAxisVertical >= 1 || rightAxisVertical <= -1) {
-                //    var dispStr = `RS Ver:${rightAxisVertical.toFixed(3)}`;
-                //    console.log(dispStr);
-                //    document.write(dispStr);
-                //}
-
-                wait = 60;
-            }
-
-            requestAnimationFrame(loop);
-        }
-
 
     </script>
 </body>
