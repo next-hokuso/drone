@@ -157,17 +157,19 @@
                 let aButton = gp.buttons[BUTTON_A_INDEX];
                 if (aButton.pressed) {
                     console.log(`Aボタンが押されました。value:${aButton.value} AxesCount${axesCount}`);
+
+                    console.log(`axes0:${gp.axes[0].toFixed(3)} axes1:${gp.axes[1].toFixed(3)} axes2:${gp.axes[2].toFixed(3)}`);
                 }
 
                 // スティックが倒されているかどうかを取得します。
                 let leftAxisHorizontal = gp.axes[AXIS_L_HORIZONTAL_INDEX];
                 let leftAxisVertical = gp.axes[AXIS_L_VERTICAL_INDEX];
-                if (leftAxisHorizontal >= 1 || leftAxisHorizontal <= -1) {
+                if (leftAxisHorizontal >= 0.9 || leftAxisHorizontal <= -0.9) {
                     var dispStr = `LS Hor:${leftAxisHorizontal.toFixed(3)}`
                     console.log(dispStr);
                     document.write(dispStr);
                 }
-                if (leftAxisVertical >= 1 || leftAxisVertical <= -1) {
+                if (leftAxisVertical >= 0.9 || leftAxisVertical <= -0.9) {
                     var dispStr = `LS Ver:${leftAxisVertical.toFixed(3)}`;
                     console.log(dispStr);
                     document.write(dispStr);
@@ -175,7 +177,7 @@
 
                 let rightAxisHorizontal = gp.axes[AXIS_R_HORIZONTAL_INDEX];
                 let rightAxisVertical = gp.axes[AXIS_R_VERTICAL_INDEX];
-                if (rightAxisHorizontal >= 1 || rightAxisHorizontal <= -1) {
+                if (rightAxisHorizontal >= 0.9 || rightAxisHorizontal <= -0.9) {
                     var dispStr = `RS Hor:${rightAxisHorizontal.toFixed(3)}`;
                     console.log(dispStr);
                     document.write(dispStr);
