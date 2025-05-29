@@ -6,7 +6,7 @@
     <title>DroneStarTraining</title>
 </head>
 <body style="text-align: center; padding: 0; border: 0; margin: 0;">
-    <canvas id="unity-canvas" width=960 height=600 style="width: 960px; height: 600px; background: #231F20"></canvas>
+    <canvas id="unity-canvas" width=960 height=540 style="width: 960px; height: 540px; background: #231F20"></canvas>
     <script src="Build/Proj_DroneSim.loader.js"></script>
 
     <!-- CDNからSDKを追加 -->
@@ -39,7 +39,7 @@
             }
             const winWidth = window.innerWidth;
             const appWidth = 960/*"960"*/;
-            const appHeight = 600/*"600"*/;
+            const appHeight = 540/*"540"*/;
             const scale = Math.min((winWidth / appWidth), (winHeight / appHeight));
             const fixWidth = (appWidth * scale);
             const fixHeight = (appHeight * scale);
