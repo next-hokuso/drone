@@ -8,6 +8,7 @@
     <type fullname="HitCheck_Mission" preserve="all" />
     <type fullname="IsCheckDrawArea" preserve="all" />
     <type fullname="ObjCtrl_Challenge" preserve="all" />
+    <type fullname="SmartButton" preserve="all" />
   </assembly>
   <assembly fullname="Coffee.UnmaskForUGUI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="Coffee.UIExtensions.Unmask" preserve="all" />
