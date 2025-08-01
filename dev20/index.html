@@ -137,14 +137,14 @@
                     document.makeFullscreen('unity-container');
                 };
 
-                setTimeout(function () {
-                    const bg = document.getElementById('custom-bg');
-                    if (bg) {
-                        bg.style.transition = 'opacity 0.0s';
-                        bg.style.opacity = '0';
-                        setTimeout(() => bg.style.display = 'none', 300);
-                    }
-                }, 300);
+                //setTimeout(function () {
+                //    const bg = document.getElementById('custom-bg');
+                //    if (bg) {
+                //        bg.style.transition = 'opacity 0.0s';
+                //        bg.style.opacity = '0';
+                //        setTimeout(() => bg.style.display = 'none', 300);
+                //    }
+                //}, 300);
 
             }).catch((message) => {
                 alert(message);
