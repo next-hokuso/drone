@@ -10,23 +10,22 @@
     <link rel="stylesheet" href="TemplateData/style.css">
 </head>
 <body style="text-align: center; padding: 0; border: 0; margin: 0; background-color: black;">
-
     <!--<div id="unity-container" class="unity-desktop">-->
-    <canvas id="unity-canvas" width=960 height=540 style="width: 960px; height: 540px; background: #000000"></canvas>
+        <canvas id="unity-canvas" width=960 height=540 style="width: 960px; height: 540px; background: #000000"></canvas>
 
-    <div id="unity-loading-bar">
-        <div id="unity-add-logo"></div>
-        <div id="unity-img-loading"></div>
-        <div id="unity-progress-bar-empty">
-            <div id="unity-progress-bar-full"></div>
+        <div id="unity-loading-bar">
+            <div id="unity-add-logo"></div>
+            <div id="unity-img-loading"></div>
+            <div id="unity-progress-bar-empty">
+                <div id="unity-progress-bar-full"></div>
+            </div>
         </div>
-    </div>
-    <div id="unity-warning"> </div>
-    <div id="unity-footer">
-        <div id="unity-logo-title-footer"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">DroneStarTraining</div>
-    </div>
+        <div id="unity-warning"> </div>
+        <div id="unity-footer">
+            <div id="unity-logo-title-footer"></div>
+            <div id="unity-fullscreen-button"></div>
+            <div id="unity-build-title">DroneStarTraining</div>
+        </div>
     <!--</div>-->
 
     <script src="Build/Proj_DroneSim.loader.js"></script>
@@ -89,18 +88,19 @@
             };
         }
 
-        var buildUrl = "Build";
-        var loaderUrl = buildUrl + "/Proj_DroneSim.loader.js";
-        var config = {
-            arguments: [],
-            dataUrl: buildUrl + "/Proj_DroneSim.data.unityweb",
-            frameworkUrl: buildUrl + "/Proj_DroneSim.framework.js.unityweb",
-            codeUrl: buildUrl + "/Proj_DroneSim.wasm.unityweb",
-            streamingAssetsUrl: "StreamingAssets",
-            companyName: "ORSO Inc.",
-            productName: "DroneStarTraining",
-            productVersion: "0.0.2",
-        };
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/Proj_DroneSim.loader.js";
+      var config = {
+        arguments: [],
+        dataUrl: buildUrl + "/Proj_DroneSim.data.unityweb",
+        frameworkUrl: buildUrl + "/Proj_DroneSim.framework.js.unityweb",
+        codeUrl: buildUrl + "/Proj_DroneSim.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "ORSO Inc.",
+        productName: "DroneStarTraining",
+        productVersion: "0.0.2",
+      };
+
 
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
             // Mobile device style: fill the whole browser client area with the game canvas:
@@ -119,24 +119,10 @@
             isMobile = true;
         }
         else {
+            var container = document.querySelector("#unity-container");
+
             fitWindowCanvasSize();
         }
-
-        //createUnityInstance(document.querySelector("#unity-canvas"), {
-        //    dataUrl: "Build/Proj_DroneSim.data.unityweb",
-        //    frameworkUrl: "Build/Proj_DroneSim.framework.js.unityweb",
-        //    codeUrl: "Build/Proj_DroneSim.wasm.unityweb",
-        //    streamingAssetsUrl: "StreamingAssets",
-        //    companyName: "ORSO Inc.",
-        //    productName: "DroneStarTraining",
-        //    productVersion: "0.0.2",
-        //    // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        //    // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-        //});
-        //
-        //if (!isMobile) {
-        //    windowResizeEvent();
-        //}
 
         document.querySelector("#unity-loading-bar").style.display = "block";
 
@@ -149,7 +135,7 @@
                 window.unityInstance = unityInstance;
                 document.querySelector("#unity-loading-bar").style.display = "none";
                 document.querySelector("#unity-fullscreen-button").onclick = () => {
-                    unityInstance.SetFullscreen(1);
+                    document.makeFullscreen('unity-container');
                 };
             }).catch((message) => {
                 alert(message);
