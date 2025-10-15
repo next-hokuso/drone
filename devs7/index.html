@@ -28,7 +28,7 @@
         </div>
     <!--</div>-->
 
-    <script src="Build/Proj_DroneSim.loader.js"></script>
+    <script src="Build/firebase.loader.js"></script>
 
     <!-- CDNからSDKを追加 -->
     <!--<script defer src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>-->
@@ -89,12 +89,12 @@
         }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Proj_DroneSim.loader.js";
+      var loaderUrl = buildUrl + "/firebase.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/Proj_DroneSim.data.unityweb",
-        frameworkUrl: buildUrl + "/Proj_DroneSim.framework.js.unityweb",
-        codeUrl: buildUrl + "/Proj_DroneSim.wasm.unityweb",
+        dataUrl: buildUrl + "/firebase.data.unityweb",
+        frameworkUrl: buildUrl + "/firebase.framework.js.unityweb",
+        codeUrl: buildUrl + "/firebase.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "ORSO Inc.",
         productName: "DroneStarTraining",
